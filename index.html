@@ -19,7 +19,7 @@
             background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
-            padding-bottom: 70px; /* Ruang untuk Sticky CTA */
+            padding-bottom: 80px; /* Ruang untuk Sticky CTA */
         }
 
         .container {
@@ -29,6 +29,18 @@
             padding: 20px 0;
         }
         
+        /* GENERAL IMAGE STYLES */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .center-img {
+            margin: 20px auto;
+        }
+
         /* HEADINGS */
         h2 {
             font-size: 1.8em;
@@ -38,7 +50,7 @@
             font-weight: 700;
         }
 
-        /* --- CTA BUTTONS (DENGAN GRADIENT) --- */
+        /* --- CTA BUTTONS --- */
         .cta-button {
             display: block;
             width: 100%;
@@ -62,20 +74,21 @@
         }
 
         .primary-cta {
-            background: linear-gradient(45deg, #ff4500, #ff8c00); /* Gradient Oranye */
+            background: linear-gradient(45deg, #ff4500, #ff8c00);
             color: white;
             border-bottom: 4px solid #cc3700;
         }
 
         .secondary-cta {
-            background: linear-gradient(45deg, #1e7e34, #28a745); /* Gradient Hijau */
+            background: linear-gradient(45deg, #1e7e34, #28a745);
             color: white;
             border-bottom: 4px solid #145a27;
         }
 
         /* --- SECTION 1: HERO/HEADLINE --- */
         .hero-section {
-            background-color: #e6f7ff; 
+            background: linear-gradient(rgba(230, 247, 255, 0.9), rgba(230, 247, 255, 0.9)), url('https://placehold.co/800x600/e6f7ff/cccccc?text=Background+Healthy+Pattern'); /* Ganti URL ini dengan background pattern jika ada */
+            background-size: cover;
             padding: 40px 0;
             text-align: center;
             border-bottom: 6px solid #1a73e8;
@@ -83,80 +96,64 @@
             overflow: hidden;
         }
         
-        .hero-section::before { 
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -10%;
-            width: 120%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
-            opacity: 0.3;
-            animation: gradient-anim 10s infinite alternate;
-        }
-        
-        @keyframes gradient-anim {
-            from { transform: rotate(0deg) scale(1); }
-            to { transform: rotate(5deg) scale(1.1); }
-        }
-
         .hero-section h1 {
-            font-size: 2.5em;
+            font-size: 2.3em;
             color: #1a73e8;
             line-height: 1.2;
             font-weight: 900;
-            position: relative;
+            margin-bottom: 15px;
         }
 
         .sub-headline {
-            font-size: 1.2em;
-            margin-top: 15px;
+            font-size: 1.1em;
+            margin-top: 10px;
             font-weight: 600;
-            position: relative;
+            color: #555;
         }
 
-        /* --- SECTION 2: URGENCY & PROMO (GLASSMORPHISM) --- */
+        .product-mockup {
+            width: 80%;
+            max-width: 350px;
+            margin: 20px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+            border: 5px solid white;
+        }
+
+        /* --- SECTION 2: PROMO --- */
         .promo-section {
             padding: 30px 0;
         }
 
         .urgency-box {
             border: 1px solid rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px); 
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            animation: pulse 1.5s infinite alternate;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
             text-align: center;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 10px rgba(255, 69, 0, 0.4); }
-            100% { box-shadow: 0 0 25px rgba(255, 69, 0, 0.8); }
+            border-top: 5px solid #ff4500;
         }
 
         .countdown-timer {
-            font-size: 4em;
+            font-size: 3.5em;
             font-weight: 900;
             color: #ff0000;
             margin: 10px 0 20px 0;
             background-color: #fff0f0;
             padding: 10px;
             border-radius: 10px;
-            border: 5px dashed #ff4500;
+            border: 3px dashed #ff4500;
         }
 
         .price-final {
-            font-size: 4.5em;
+            font-size: 4em;
             color: #cc0000;
             font-weight: 900;
-            margin-bottom: 10px;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
         }
         
-        /* --- SECTION 3: BENEFITS (DENGAN IKON CSS) --- */
+        /* --- SECTION 3: BENEFITS --- */
         .benefits-section {
             padding: 50px 0;
             background-color: #fff;
@@ -164,7 +161,7 @@
 
         .benefit-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 20px;
             padding: 18px;
             border-radius: 10px;
@@ -178,7 +175,6 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Ikon Checkmark CSS yang lebih rapi daripada emoji */
         .check-icon {
             min-width: 30px;
             height: 30px;
@@ -187,6 +183,7 @@
             margin-right: 15px;
             position: relative;
             flex-shrink: 0;
+            margin-top: 5px;
         }
         .check-icon::before {
             content: '✓';
@@ -199,7 +196,7 @@
             line-height: 1;
         }
 
-        /* --- SECTION 6: TESTIMONIALS (GLASSMORPHISM) --- */
+        /* --- SECTION 4: TESTIMONIALS --- */
         .testimonial-section {
             background-color: #f0f8ff; 
             padding: 40px 0;
@@ -207,21 +204,31 @@
         }
 
         .testimonial-card {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(5px);
+            background: #fff;
             padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             margin: 20px 0;
-            border: 1px solid rgba(255, 255, 255, 0.6);
             border-left: 6px solid #1a73e8; 
-            transition: transform 0.3s;
+            text-align: left;
         }
-        .testimonial-card:hover {
-            transform: scale(1.02);
+        
+        .testimonial-user {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #1a73e8;
         }
 
-        /* --- STICKY CTA BAR (MOBILE CONVERSION) --- */
+        /* --- STICKY CTA --- */
         .sticky-cta-bar {
             position: fixed;
             bottom: 0;
@@ -236,16 +243,9 @@
             justify-content: space-between;
         }
 
-        .sticky-cta-bar .price-info {
-            color: white;
-            text-align: left;
-            font-size: 0.9em;
-            line-height: 1.2;
-        }
-
         .sticky-cta-bar .price-info strong {
             display: block;
-            font-size: 1.5em;
+            font-size: 1.4em;
             color: #ffcc00; 
         }
         
@@ -253,12 +253,11 @@
             margin: 0;
             padding: 10px 15px;
             font-size: 1em;
-            max-width: 200px;
-            flex-shrink: 0;
+            max-width: 180px;
             border-radius: 50px;
         }
 
-        /* --- FORMULIR & PEMBAYARAN --- */
+        /* --- FORM & PAYMENT --- */
         .form-section {
             padding: 40px 0;
             background-color: #e6fff0; 
@@ -281,37 +280,35 @@
             text-align: center;
         }
 
-        .bank-info, .ewallet-info {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            background-color: #f7f7f7;
-            text-align: left; 
+        .bank-logo {
+            max-width: 120px;
+            margin: 10px auto;
         }
 
-        .bank-info h4, .ewallet-info h4 {
-            color: #008000;
-            text-align: center;
+        .qris-image {
+            width: 200px;
+            margin: 10px auto;
+            border: 2px solid #333;
+            border-radius: 5px;
         }
-
-        #wa-confirm-button {
-            background-color: #25D366; 
-            border-bottom: 4px solid #1c9e4e;
+        
+        .footer-section {
+            padding: 20px;
+            font-size: 0.8em;
+            color: #666;
+            margin-bottom: 60px;
         }
-
-        /* Hapus styling untuk checkbox yang tidak digunakan */
-        .checkbox-wrapper { display: none; }
-        .bonus-info-form { display: none; }
     </style>
 </head>
 <body>
 
     <header class="hero-section">
         <div class="container">
+            <h1>STOP Menderita! Temukan **Jalur Cepat Sembuh Total** dari GERD & Anxiety dalam 30 Hari.</h1>
             
-            <h1>STOP Menderita! Temukan **Jalur Cepat Sembuh Total** dari GERD, Asam Lambung Kronis, dan Anxiety dalam 30 Hari.</h1>
-            <p class="sub-headline">E-book & Video Blueprint: Panduan Langkah Demi Langkah yang Aman dan Ilmiah untuk Mengembalikan Ketenangan Lambung & Pikiran Anda.</p>
+            <img src="gerd.jpeg" alt="Ebook Panduan GERD" class="product-mockup">
+            
+            <p class="sub-headline">Panduan Langkah Demi Langkah yang Aman dan Ilmiah untuk Mengembalikan Ketenangan Lambung & Pikiran Anda.</p>
         </div>
     </header>
 
@@ -323,58 +320,87 @@
             </div>
             
             <div class="price-wrapper">
-                <p class="price-normal">Harga Normal (Terapi Dokter/Ahli): <span>Rp 1.500.000</span></p>
-                <h2 class="price-promo">🔥 PROMO SPESIAL HARI INI SAJA!! 🔥</h2>
+                <p class="price-normal">Harga Normal: <span style="text-decoration: line-through; color: #777;">Rp 150.000</span></p>
+                <h2 class="price-promo" style="margin-bottom:0;">🔥 PROMO HARI INI 🔥</h2>
                 <h1 class="price-final">Rp 65.000</h1>
             </div>
 
-            <a href="#form-section" class="cta-button primary-cta">SAYA SIAP SEHAT & TENANG! DAFTAR SEKARANG</a>
-            <p class="secure-payment">Penawaran Khusus Terbatas.</p>
+            <a href="#form-section" class="cta-button primary-cta">AMBIL PROMO SEKARANG!</a>
+            <p class="secure-payment" style="margin-top:10px; font-size:0.9em;">🔒 100% Secure Payment</p>
         </div>
     </section>
     
     <section class="benefits-section">
         <div class="container">
-            <h2>Solusi yang Anda Dapatkan (Fokus Lambung & Mental)</h2>
+            <h2>Solusi yang Anda Dapatkan</h2>
+            <img src="sembuh.jpg" alt="Hidup Sehat" class="center-img">
+
             <div class="benefit-list">
                 
                 <div class="benefit-item">
                     <span class="check-icon"></span>
-                    <p><strong>Blueprint Pola Makan Anti-Kambuh (30 Hari):</strong> Daftar lengkap makanan yang harus dihindari dan pola makan yang terbukti menyembuhkan dinding lambung.</p>
+                    <div>
+                        <strong>Video 3 Pola hidup sembuh total Asam Lambung</p>
+                    </div>
                 </div>
                 
                 <div class="benefit-item">
                     <span class="check-icon"></span>
-                    <p><strong>Teknik Nafas 5-4-7 (Video Praktik):</strong> Cara instan meredakan serangan panik, jantung berdebar, dan kecemasan akibat GERD tanpa obat.</p>
+                    <div>
+                        <strong>Video Mengatasi sensasi yang muncul</p>
+                    </div>
                 </div>
 
                 <div class="benefit-item">
                     <span class="check-icon"></span>
-                    <p><strong>Mengatasi Sensasi Psikosomatis:</strong> Mengurai benang merah antara pikiran cemas dan gejala fisik yang tidak ditemukan di tes medis.</p>
+                    <div>
+                        <strong>Video solusi mengatasi Asam lambung tiba tiba kambuh </p>
+                    </div>
                 </div>
-
                 <div class="benefit-item">
                     <span class="check-icon"></span>
-                    <p><strong>Daftar Obat/Suplemen Alami Pendukung:</strong> Rekomendasi yang aman dan efektif untuk mempercepat pemulihan lapisan lambung.</p>
+                    <div>
+                        <strong>Ebook panduan praktis Solusi sembuh asam lambung </p>
+                    </div>
                 </div>
-                
-                
+                <div class="benefit-item">
+                    <span class="check-icon"></span>
+                    <div>
+                        <strong>Video blue print Sembuh asam lambung secara total </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <section class="testimonial-section">
         <div class="container">
-            <h2>Mereka Sudah Sembuh, Sekarang Giliran Anda</h2>
+            <h2>Kata Mereka Yang Sudah Sembuh</h2>
+            
             <div class="testimonial-card">
                 <p>"Kecemasan hebat saya hilang setelah saya mengikuti pola pernafasan dan pola makan ini. Terima kasih! Lambung sudah tidak perih."</p>
-                <strong>— Siti A. (Penderita GERD & Anxiety 2 Tahun)</strong>
+                <div class="testimonial-user">
+                    <img src="user1.png" class="user-avatar">
+                    <div>
+                        <strong>Siti A.</strong><br>
+                        <small>Penderita GERD 2 Tahun</small>
+                    </div>
+                </div>
             </div>
+
              <div class="testimonial-card">
                 <p>"Saya sudah tidak merasakan sensasi mengganjal di tenggorokan lagi. Benar-benar fokus pada penyembuhan lambung dan mental!"</p>
-                <strong>— Dedi R. (Asam Lambung Kronis)</strong>
+                <div class="testimonial-user">
+                    <img src="user2.png" class="user-avatar">
+                    <div>
+                        <strong>Dedi R.</strong><br>
+                        <small>Asam Lambung Kronis</small>
+                    </div>
+                </div>
             </div>
-            <a href="#form-section" class="cta-button primary-cta">BACA KISAH SUKSES LAINNYA & DAFTAR!</a>
+
+            <a href="#form-section" class="cta-button primary-cta">SAYA MAU SEMBUH SEPERTI MEREKA</a>
         </div>
     </section>
 
@@ -382,101 +408,85 @@
     <section id="form-section" class="form-section">
         <div class="container">
             <div id="registration-step">
-                <h2>🔑 Amankan Akses Anda Sekarang (Hanya Rp 65.000)</h2>
+                <h2>🔑 Isi Data Untuk Akses (Hanya Rp 65.000)</h2>
                 <form id="wa-form" class="registration-form">
                     <input type="text" id="nama" placeholder="Nama Anda" required>
-                    <input type="tel" id="whatsapp-num" placeholder="No. WhatsApp Anda (Penting!)" required>
-                    <input type="email" id="email" placeholder="Email Anda (Untuk Pengiriman Produk)" required>
+                    <input type="tel" id="whatsapp-num" placeholder="No. WhatsApp (Awali 628...)" required>
+                    <input type="email" id="email" placeholder="Email Anda" required>
                     
-                    <button type="submit" class="cta-button secondary-cta">LANJUT KE PEMBAYARAN & KLAIM AKSES</button>
+                    <button type="submit" class="cta-button secondary-cta">LANJUT KE PEMBAYARAN >></button>
                 </form>
             </div>
             
             <div id="payment-step" style="display:none;">
-                <h2>🎉 Pesanan Berhasil Diamankan! Selesaikan Pembayaran!</h2>
+                <h2>🎉 Pesanan Diterima! Selesaikan Pembayaran</h2>
                 
                 <div class="payment-details-box">
                     
                     <div class="bank-info" style="text-align: left; background-color: #e9f7ef; border-color: #28a745;">
-                        <h4 style="text-align: center; color:#28a745;">RINCIAN PESANAN:</h4>
                         <table style="width:100%;">
                             <tr>
-                                <td>E-book & Video Blueprint Sembuh GERD & Anxiety (x1)</td>
+                                <td>E-book & Video Blueprint</td>
                                 <td style="text-align:right;">Rp 65.000</td>
                             </tr>
                             <tr style="border-top: 1px solid #ddd; font-weight: bold;">
-                                <td>TOTAL YANG HARUS DIBAYAR</td>
+                                <td>TOTAL TRANSFER</td>
                                 <td style="text-align:right; color:red;">Rp 65.000</td>
                             </tr>
                         </table>
                     </div>
 
-
-                    <p>Mohon segera transfer dalam <strong><span id="payment-timer">60:00</span> menit</strong> agar promo Anda tidak hangus.</p>
+                    <p style="margin: 15px 0;">Mohon transfer dalam <strong><span id="payment-timer">60:00</span> menit</strong>.</p>
                     
                     <div class="bank-info">
-                        <h4>🏦 Transfer Bank (Pastikan Tepat Rp 65.000)</h4>
-                        <p><strong>BRI: </strong> [485401000270507]<br> A.N. [ENDRIADI]</p>
-                                            </div>
-
-                    <div class="ewallet-info">
-                        <h4>📱 Pembayaran E-Wallet/QRIS</h4>
-                        
-                        <p style="text-align: center;">Scan QRIS di atas untuk pembayaran via GoPay, OVO, Dana, ShopeePay, dll.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BANK_BRI_logo.svg/1200px-BANK_BRI_logo.svg.png" alt="Logo BRI" class="bank-logo">
+                        <p><strong>No. Rek: [485401000270507]</strong><br> A.N. [ENDRIADI]</p>
                     </div>
 
-                    <h4 style="margin-top: 25px; color:#ff4500; text-align: center;">Konfirmasi & Akses Produk</h4>
-                    <p style="text-align: center;">Setelah transfer/pembayaran, segera konfirmasi dan klaim akses Anda:</p>
+                    <div class="ewallet-info">
+                        <h4>📱 Scan QRIS (All Payment)</h4>
+                        <img src="https://placehold.co/300x300/ffffff/000000?text=SCAN+QRIS+DISINI" alt="QRIS Code" class="qris-image">
+                        <p style="text-align: center; font-size: 0.8em;">Support: GoPay, OVO, Dana, ShopeePay, BCA Mobile.</p>
+                    </div>
+
+                    <h4 style="margin-top: 25px; color:#ff4500;">Langkah Terakhir:</h4>
+                    <p>Klik tombol di bawah untuk konfirmasi otomatis:</p>
                     
-                    <a id="wa-confirm-button" class="cta-button" href="#" target="_blank" style="background-color: #25D366; border-bottom: 4px solid #1c9e4e;">KONFIRMASI PEMBAYARAN VIA WHATSAPP (Wajib!)</a>
-                    
-                    <p style="text-align: center; margin-top: 15px;">Akses E-book & Video akan dikirim dalam 5-10 menit setelah konfirmasi.</p>
+                    <a id="wa-confirm-button" class="cta-button" href="#" target="_blank" style="background-color: #25D366; border-bottom: 4px solid #1c9e4e;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 20px; display:inline; vertical-align:middle; margin-right:5px;">
+                        KONFIRMASI WHATSAPP
+                    </a>
                 </div>
             </div>
-
-            <p class="secure-payment">🔒 Transaksi Aman | Instant Access</p>
+            <p class="secure-payment" style="text-align:center; margin-top:20px;">🔒 Transaksi Aman & Terjamin</p>
         </div>
     </section>
 
     <footer class="footer-section">
         <div class="container">
-            <center><p>Penting: Program ini adalah panduan. Jika gejala parah, segera konsultasi ke dokter. &copy; 2025 Promo Bebas Gerd Anxiety</p></center>
+            <center><p>Penting: Program ini adalah panduan pendukung. &copy; 2025 Promo Bebas Gerd Anxiety</p></center>
         </div>
     </footer>
     
     <div class="sticky-cta-bar">
-        <div class="price-info">
-            Harga Spesial:
+        <div class="price-info" style="color:white;">
+            Harga Promo:
             <strong>Rp 65.000</strong>
         </div>
-        <a href="#form-section" class="cta-button primary-cta">DAFTAR SEKARANG</a>
+        <a href="#form-section" class="cta-button primary-cta">DAFTAR</a>
     </div>
 
     <script>
-        // Pastikan Anda mengganti nomor WA di sini
-        const adminNumber = '[6285248436989]';
+        const adminNumber = '[6285248436989]'; // Ganti no WA Admin (format 628...)
         const adminName = '[ENDRIADI]';
 
         document.getElementById('wa-form').addEventListener('submit', function(e) {
             e.preventDefault();
-
             const nama = document.getElementById('nama').value;
             const noWa = document.getElementById('whatsapp-num').value;
             const email = document.getElementById('email').value;
 
-            // Pesan WA Sederhana, Tanpa Klaim Bonus
-            const message = `
-Halo ${adminName}, saya ${nama}.
-
-Saya sudah melihat detail pembayaran dan sudah/akan segera transfer **Rp 65.000** untuk Promo Sembuh GERD & Anxiety.
-
-Detail pemesanan saya:
-Email: ${email}
-No. WA: ${noWa}
-
-Mohon bantu verifikasi dan kirimkan link akses E-book dan Video saya. Terima kasih!
-            `.trim();
-
+            const message = `Halo ${adminName}, saya ${nama}.\n\nSaya mau transfer Rp 65.000 untuk Promo Ebook GERD.\n\nDetail:\nEmail: ${email}\nWA: ${noWa}\n\nMohon info rekening/QRIS untuk transfer. Terima kasih.`.trim();
             const encodedMessage = encodeURIComponent(message);
             const waURL = `https://wa.me/${adminNumber}?text=${encodedMessage}`;
 
@@ -484,30 +494,24 @@ Mohon bantu verifikasi dan kirimkan link akses E-book dan Video saya. Terima kas
 
             document.getElementById('registration-step').style.display = 'none';
             document.getElementById('payment-step').style.display = 'block';
-
             document.getElementById('payment-step').scrollIntoView({ behavior: 'smooth' });
-
             startPaymentTimer(60 * 60, document.getElementById('payment-timer')); 
         });
 
-        // --- FUNGSI TIMER (TETAP SAMA) ---
         function startTimer(duration, display) {
-            let timer = duration;
+            let timer = duration, minutes, seconds;
             const interval = setInterval(function () {
                 minutes = parseInt((timer % 3600) / 60, 10);
                 seconds = parseInt(timer % 60, 10);
                 minutes = minutes < 10 ? "0" + minutes : minutes;
                 seconds = seconds < 10 ? "0" + seconds : seconds;
-                display.textContent = minutes + ":" + seconds; 
-                if (--timer < 0) {
-                    clearInterval(interval);
-                    display.textContent = "PROMO SELESAI";
-                }
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) clearInterval(interval);
             }, 1000);
         }
 
         function startPaymentTimer(duration, display) {
-            let timer = duration;
+            let timer = duration, minutes, seconds;
             const interval = setInterval(function () {
                 minutes = parseInt((timer % 3600) / 60, 10);
                 seconds = parseInt(timer % 60, 10);
@@ -516,17 +520,14 @@ Mohon bantu verifikasi dan kirimkan link akses E-book dan Video saya. Terima kas
                 display.textContent = minutes + ":" + seconds;
                 if (--timer < 0) {
                     clearInterval(interval);
-                    display.textContent = "WAKTU HABIS!";
+                    display.textContent = "WAKTU HABIS";
                 }
             }, 1000);
         }
 
         window.onload = function () {
-            const initialDurationInSeconds = 60 * 28 + 3; 
             const promoDisplay = document.getElementById('countdown');
-            if(promoDisplay) {
-                startTimer(initialDurationInSeconds, promoDisplay);
-            }
+            if(promoDisplay) startTimer((60 * 28) + 3, promoDisplay);
         };
     </script> 
 </body>
